@@ -4,8 +4,10 @@ client = Client('foo', 'bar')
 bm = BinanceSocketManager(client)
 
 import json
+import sys
 def print_json(msg):
     print(json.dumps(msg['data']))
+    sys.stdout.flush()
 
 bm.start_multiplex_socket([
     'btcusdt@trade', 'ethusdt@trade', 'ltcusdt@trade', 'neousdt@trade', 'bnbusdt@trade',
